@@ -27,11 +27,8 @@ class Dictionary
     end
     
     def printable
-        printed = ""
-        @internal_dict.keys.sort.each_with_index { |key, index| 
-            printed << "[#{key}] \"#{@internal_dict[key]}\""
-            printed << "\n" unless index == @internal_dict.size - 1
-        }
-        printed
+        @internal_dict.keys.sort.map { |key| 
+            "[#{key}] \"#{@internal_dict[key]}\""
+        }.join("\n")
     end
 end
